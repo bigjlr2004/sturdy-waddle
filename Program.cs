@@ -14,7 +14,6 @@ namespace ShootingDice
             Player player2 = new Player();
             player2.Name = "Sue";
 
-            player2.Play(player1);
             player1.Play(player2);
 
             Console.WriteLine("-------------------");
@@ -32,15 +31,29 @@ namespace ShootingDice
             Player higher = new OneHigherPlayer();
             higher.Name = "Dice on Fire";
 
-            player1.Play(large);
-            Console.WriteLine("");
-            Console.WriteLine("------Higher-------");
-            Console.WriteLine("-------------------");
-            higher.Play(player1);
-            Console.WriteLine("-------------------");
-            higher.Play(player2);
-            Console.WriteLine("-------------------");
-            higher.Play(large);
+            // Console.WriteLine("------Large Player-------");
+            // Console.WriteLine("------------------");
+            // player1.Play(large);
+            // Console.WriteLine("");
+
+            // Console.WriteLine("------Higher-------");
+            // Console.WriteLine("-------------------");
+            // higher.Play(player1);
+            // Console.WriteLine("-------------------");
+            // higher.Play(player2);
+            // Console.WriteLine("-------------------");
+            // higher.Play(large);
+
+            Console.WriteLine("------Human-------");
+            Console.WriteLine("------------------");
+            Console.WriteLine("What is your player name?");
+            string HumanPlayerName = Console.ReadLine();
+
+            Player Human = new HumanPlayer();
+            Human.Name = HumanPlayerName;
+            Human.Play(player2);
+            Human.Play(player3);
+
 
             Console.WriteLine("-------------------");
 
