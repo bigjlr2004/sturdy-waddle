@@ -17,14 +17,14 @@ namespace ShootingDice
             Player player2 = new Player();
             player2.Name = "Sue";
 
-            player1.Play(player2);
+            //player1.Play(player2);
 
             Console.WriteLine("-------------------");
 
             Player player3 = new Player();
             player3.Name = "Wilma";
 
-            player3.Play(player2);
+            //player3.Play(player2);
 
             Console.WriteLine("-------------------");
 
@@ -34,10 +34,22 @@ namespace ShootingDice
             Player higher = new OneHigherPlayer();
             higher.Name = "Dice on Fire";
 
+            Player Sore = new SoreLoserPlayer();
+            Sore.Name = "Sore Loser";
+
             // Console.WriteLine("------Large Player-------");
             // Console.WriteLine("------------------");
             // player1.Play(large);
             // Console.WriteLine("");
+
+            Console.WriteLine("---Sore Loser---");
+            Console.WriteLine("----------------");
+            Sore.Play(player2);
+            Console.WriteLine();
+            Console.WriteLine("---Sore Loser---");
+            Console.WriteLine("----------------");
+            Sore.Play(large);
+            Console.WriteLine("");
 
             // Console.WriteLine("------Higher-------");
             // Console.WriteLine("-------------------");
@@ -47,15 +59,15 @@ namespace ShootingDice
             // Console.WriteLine("-------------------");
             // higher.Play(large);
 
-            Console.WriteLine("------Human-------");
-            Console.WriteLine("------------------");
-            Console.WriteLine("What is your player name?");
-            string HumanPlayerName = Console.ReadLine();
+            // Console.WriteLine("------Human-------");
+            // Console.WriteLine("------------------");
+            // Console.WriteLine("What is your player name?");
+            // string HumanPlayerName = Console.ReadLine();
 
-            Player Human = new HumanPlayer();
-            Human.Name = HumanPlayerName;
-            Human.Play(player2);
-            Human.Play(player3);
+            // Player Human = new HumanPlayer();
+            // Human.Name = HumanPlayerName;
+            // Human.Play(player2);
+            // Human.Play(player3);
 
 
             Console.WriteLine("-------------------");
@@ -64,7 +76,7 @@ namespace ShootingDice
                 player1, player2, player3, large
             };
 
-            PlayMany(players);
+            // PlayMany(players);
         }
 
         static void PlayMany(List<Player> players)
