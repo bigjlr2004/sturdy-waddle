@@ -8,7 +8,7 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
-            SmackTalkingPlayer player1 = new SmackTalkingPlayer("You can't Beat me.");
+            Player player1 = new SmackTalkingPlayer("You can't Beat me.");
             player1.Name = "Bob";
 
             Player player2 = new Player();
@@ -29,7 +29,18 @@ namespace ShootingDice
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
+            Player higher = new OneHigherPlayer();
+            higher.Name = "Dice on Fire";
+
             player1.Play(large);
+            Console.WriteLine("");
+            Console.WriteLine("------Higher-------");
+            Console.WriteLine("-------------------");
+            higher.Play(player1);
+            Console.WriteLine("-------------------");
+            higher.Play(player2);
+            Console.WriteLine("-------------------");
+            higher.Play(large);
 
             Console.WriteLine("-------------------");
 
@@ -66,7 +77,20 @@ namespace ShootingDice
                 // Make adjacent players play noe another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
-                player1.Play(player2);
+                if (player2.Name == "Bob")
+                {
+                    Console.WriteLine("------Round 1--------");
+                    player2.Play(player1);
+                    Console.WriteLine("------Rematch--------");
+                    player2.Play(player1);
+                }
+                else
+                {
+                    Console.WriteLine("------Round 1--------");
+                    player1.Play(player2);
+                    Console.WriteLine("------Rematch--------");
+                    player1.Play(player2);
+                }
             }
         }
     }
